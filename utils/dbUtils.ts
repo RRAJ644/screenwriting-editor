@@ -1,8 +1,8 @@
-import mongoose, { Document, Schema } from 'mongoose'
+import mongoose, { Schema, Document, Model } from 'mongoose';
 
-export const createModel = (name: string, schema: Schema<Document>) => {
+export const createModel = <T extends Document>(name: string, schema: Schema<T>): Model<T> => {
   if (!mongoose.models[name]) {
-    return mongoose.model(name, schema)
+    return mongoose.model<T>(name, schema);
   }
-  return mongoose.models[name]
-}
+  return mongoose.models[name] as Model<T>;
+};

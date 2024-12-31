@@ -1,8 +1,14 @@
-const ERROR_MESSAGES = {
+export const ERROR_MESSAGES = {
   DB_ERRORS: {
-    connection_timeout:
-      'The connection attempt timed out. This might be due to network issues or incorrect MongoDB URI.',
-    connection_successful: 'MongoDB connected successfully.',
-    connection_error: 'MongoDB connection failed',
+    MISSING_URL:
+      'MongoDB connection URL is not defined in environment variables.',
+    CONNECTION_FAILED:
+      'Failed to connect to MongoDB. Please check your database connection.',
+    ALREADY_CONNECTED: 'Already connected to the MongoDB database.',
+    CONNECTION_ERROR: 'Error while trying to establish MongoDB connection: ',
+  },
+
+  DB_CONNECTION: {
+    CONNECTION_ESTABLISHED: 'Connecting to MongoDB...',
   },
 }

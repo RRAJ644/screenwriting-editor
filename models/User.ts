@@ -1,5 +1,14 @@
 import { createModel } from '@/utils/dbUtils'
-import mongoose from 'mongoose'
+import mongoose, { Document } from 'mongoose'
+
+export interface IUser extends Document {
+  name: string;
+  email: string;
+  avatar?: string;
+  username: string;
+  refreshToken: string;
+  scripts: mongoose.Types.ObjectId[];
+}
 
 const userSchema = new mongoose.Schema(
   {

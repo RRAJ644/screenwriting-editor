@@ -1,7 +1,7 @@
 import { createModel } from '@/utils/dbUtils'
 import mongoose, { Schema } from 'mongoose'
 
-const characterSchema = new mongoose.Schema(
+const transitionSchema = new mongoose.Schema(
   {
     description: {
       type: String,
@@ -11,6 +11,6 @@ const characterSchema = new mongoose.Schema(
   { timestamps: true }
 )
 
-const Character = createModel('Character', characterSchema)
+const Transition = createModel('Transition', transitionSchema)
 
-export default Character
+export default Transition
