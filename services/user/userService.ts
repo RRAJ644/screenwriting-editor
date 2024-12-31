@@ -14,14 +14,13 @@ export class UserService implements IUserService {
     avatar: string,
     username: string
   ): Promise<IUser> {
+    
     const existingUser = await this.userRepository.getUserByEmail(email)
     if (existingUser) {
       throw new Error('User with this email already exists')
     }
 
-    const existingUsername = await this.userRepository.getUserByUsername(
-      username
-    )
+    const existingUsername = await this.userRepository.getUserByUsername(username)
     if (existingUsername) {
       throw new Error('Username is already taken')
     }

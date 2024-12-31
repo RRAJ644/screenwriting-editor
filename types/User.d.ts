@@ -14,7 +14,7 @@ type User = {
   avatar: string
   username: string
   refreshToken: string
-  scripts: mongoose.Types.ObjectId[]
+  scripts: Types.ObjectId[]
   createdAt: Date
   updatedAt: Date
 }

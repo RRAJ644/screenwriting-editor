@@ -2,12 +2,12 @@ import { createModel } from '@/utils/dbUtils'
 import mongoose, { Document } from 'mongoose'
 
 export interface IUser extends Document {
-  name: string;
-  email: string;
-  avatar?: string;
-  username: string;
-  refreshToken: string;
-  scripts: mongoose.Types.ObjectId[];
+  name: string
+  email: string
+  avatar?: string
+  username: string
+  refreshToken: string
+  scripts: mongoose.Types.ObjectId[]
 }
 
 const userSchema = new mongoose.Schema(
@@ -24,6 +24,10 @@ const userSchema = new mongoose.Schema(
     avatar: {
       type: String,
       required: false,
+    },
+    password: {
+      type: String,
+      required: true,
     },
     username: {
       type: String,
