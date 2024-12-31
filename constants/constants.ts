@@ -11,4 +11,8 @@ export const ERROR_MESSAGES = {
   DB_CONNECTION: {
     CONNECTION_ESTABLISHED: 'Connecting to MongoDB...',
   },
+
+  USER_MESSAGES: {
+    SIGNUP_MESSAGES: 'User with this email already exists',
+  },
 }

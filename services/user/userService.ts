@@ -14,7 +14,7 @@ export class UserService implements IUserService {
     avatar: string,
     username: string
   ): Promise<IUser> {
-    
+
     const existingUser = await this.userRepository.getUserByEmail(email)
     if (existingUser) {
       throw new Error('User with this email already exists')
@@ -35,3 +35,5 @@ export class UserService implements IUserService {
     return newUser
   }
 }
+
+
