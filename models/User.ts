@@ -1,10 +1,13 @@
 import { createModel } from '@/utils/dbUtils'
 import mongoose, { Document } from 'mongoose'
 
+
+//use of this interface??
 export interface IUser extends Document {
   name: string
   email: string
   avatar?: string
+  password: string,
   username: string
   refreshToken: string
   scripts: mongoose.Types.ObjectId[]
@@ -36,7 +39,6 @@ const userSchema = new mongoose.Schema(
     },
     refreshToken: {
       type: String,
-      required: true,
     },
     scripts: [
       {

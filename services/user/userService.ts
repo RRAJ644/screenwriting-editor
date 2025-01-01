@@ -11,6 +11,7 @@ export class UserService implements IUserService {
   public async createUser(
     name: string,
     email: string,
+    password:string,
     avatar: string,
     username: string
   ): Promise<IUser> {
@@ -25,12 +26,7 @@ export class UserService implements IUserService {
       throw new Error('Username is already taken')
     }
 
-    const newUser = await this.userRepository.create({
-      name,
-      email,
-      avatar,
-      username,
-    })
+    const newUser = await this.userRepository.create({ name,email,password,avatar,username,})
 
     return newUser
   }
